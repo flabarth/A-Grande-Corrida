@@ -54,12 +54,13 @@ public abstract class Veiculo {
 	
 	public void imprimeSeta(Pista pista){
 		
-		final int METRO_POR_PASSOS = 10;
+		int metroPorPassos = (int)(pista.getComprimento()*(1 / 100.0));
+		System.out.println(metroPorPassos);
 		
-		double numeroSeta = this.posicaoAtual / METRO_POR_PASSOS;
+		double numeroSeta = this.posicaoAtual / metroPorPassos;
 		String terrenoPista = "";
 		for(int x = 0; x < numeroSeta; x++){
-			terrenoPista = pista.getTerreno(x * METRO_POR_PASSOS);
+			terrenoPista = pista.getTerreno(x * metroPorPassos);
 			switch(terrenoPista){
 				case "terra":
 					this.caminhoPercorrido += "-";
