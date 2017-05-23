@@ -55,7 +55,6 @@ public abstract class Veiculo {
 	public void imprimeSeta(Pista pista){
 		
 		int metroPorPassos = (int)(pista.getComprimento()*(1 / 100.0));
-		System.out.println(metroPorPassos);
 		
 		double numeroSeta = this.posicaoAtual / metroPorPassos;
 		String terrenoPista = "";
