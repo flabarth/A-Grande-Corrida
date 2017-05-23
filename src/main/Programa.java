@@ -13,6 +13,7 @@ public class Programa {
 		// TODO Auto-generated method stub
 		
 		int tamanhoPista;
+		int velocidadeDoJogo;
 		boolean ganhou = false;
 		double posicaoMoto;
 		double posicaoAutomovel;
@@ -94,6 +95,9 @@ public class Programa {
 			}
 		}while(!aposta.matches("moto|automovel|onibus|trator|bike"));
 		
+		System.out.println("Diga a velocidade (em ms) para a corrida ocorrer (recomendado 250):");
+		velocidadeDoJogo = scan.nextInt();
+		
 		while(ganhou == false){
 			
 			moto.mover(pista.getTerreno(moto.getPosicaoAtual()));
@@ -141,7 +145,7 @@ public class Programa {
 				ganhou = true;
 			}
 			
-			TimeUnit.MILLISECONDS.sleep(250);
+			TimeUnit.MILLISECONDS.sleep(velocidadeDoJogo);
 			
 			if(!ganhou){
 				System.out.println("\n\n\n\n\n\n");
