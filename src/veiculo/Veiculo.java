@@ -1,5 +1,7 @@
 package veiculo;
 
+import pista.*;
+
 public abstract class Veiculo {
 
 	protected final double VELOCIDADE_TERRA;
@@ -50,10 +52,15 @@ public abstract class Veiculo {
 		return this.nomeVeiculo;
 	}
 	
-	public void imprimeSeta(){
-		double numeroSeta = this.posicaoAtual / 10;
+	public void imprimeSeta(Pista pista){
+		
+		final int METRO_POR_PASSOS = 10;
+		
+		double numeroSeta = this.posicaoAtual / METRO_POR_PASSOS;
+		String terrenoPista = "";
 		for(int x = 0; x < numeroSeta; x++){
-			switch(this.terrenoAtual){
+			terrenoPista = pista.getTerreno(x * METRO_POR_PASSOS);
+			switch(terrenoPista){
 				case "terra":
 					this.caminhoPercorrido += "-";
 					break;

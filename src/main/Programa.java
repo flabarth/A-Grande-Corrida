@@ -31,23 +31,23 @@ public class Programa {
 			
 			moto.mover(pista.getTerreno(moto.getPosicaoAtual()));
 			posicaoMoto = moto.getPosicaoAtual();
-			moto.imprimeSeta();
+			moto.imprimeSeta(pista);
 			
 			automovel.mover(pista.getTerreno(automovel.getPosicaoAtual()));
 			posicaoAutomovel = automovel.getPosicaoAtual();
-			automovel.imprimeSeta();
+			automovel.imprimeSeta(pista);
 			
 			onibus.mover(pista.getTerreno(onibus.getPosicaoAtual()));
 			posicaoOnibus = onibus.getPosicaoAtual();
-			onibus.imprimeSeta();
+			onibus.imprimeSeta(pista);
 			
 			trator.mover(pista.getTerreno(trator.getPosicaoAtual()));
 			posicaoTrator = trator.getPosicaoAtual();
-			trator.imprimeSeta();
+			trator.imprimeSeta(pista);
 			
 			bike.mover(pista.getTerreno(bike.getPosicaoAtual()));
 			posicaoBike = bike.getPosicaoAtual();
-			bike.imprimeSeta();
+			bike.imprimeSeta(pista);
 			
 			if(posicaoMoto >= tamanhoPista){
 				ganhador = moto;
